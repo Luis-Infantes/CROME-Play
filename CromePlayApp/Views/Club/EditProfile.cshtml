@@ -1,0 +1,43 @@
+﻿
+@model Club
+
+
+
+
+<div class="container-style">
+    <h2>@Model.ClubName</h2>
+
+  
+        <h4>Usuario</h4>
+        <p>@Model.ClubEmail</p>
+
+    <div class="link-style">
+        <a asp-area="Identity" asp-page="/Account/Manage/Email">Editar Email</a>
+     </div>
+
+
+    <form class="form-style" method="post" asp-action="EditProfile" >
+        <input asp-for="ClubId" type="hidden" />
+        <h4>Editar perfil</h4>
+
+        <div class="form-group">
+            <label asp-for="ClubName">Nombre</label>
+            <input asp-for="ClubName"/>
+            <span asp-validation-for="ClubName" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="ClubDescription">Descripción</label>
+            <textarea asp-for="ClubDescription" ></textarea>
+            <span asp-validation-for="ClubDescription" class="text-danger"></span>
+        </div>
+
+        <div class="form-actions">
+             <button type="submit">Editar</button>
+        </div>
+    </form>
+    <div class="link-style">
+        <a asp-controller="Club" asp-action="SeeProfile" asp-route-id="@Model.ClubId">Volver</a>
+    </div>
+</div>

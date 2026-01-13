@@ -1,0 +1,57 @@
+﻿@using CromePlayApp.Models
+
+@model IEnumerable<TaskItem>
+
+<div id="club-tasks"
+     data-club-id="@ViewBag.clubId"
+     data-add-url="@Url.Action("AddTask", "Club")"
+     data-edit-url="@Url.Action("EditTask", "Club")"
+     data-complete-url="@Url.Action("CompleteTask", "Club")">
+
+    <h2>Gestor de tareas</h2>
+
+    <!-- Formulario añadir tarea -->
+    <form asp-action="AddTask" asp-controller="Club" id="addTaskForm" class="form-style" method="post">
+        <input type="hidden" name="clubId" value="123" />
+        <label for="taskDescription">Nueva tarea</label>
+        <input id="taskDescription" name="description" type="text" placeholder="Descripción..." />
+        <button type="submit">Añadir</button>
+    </form>
+
+    <div class="container-style">
+    <!-- Tabla de tareas -->
+        <div class="table-scroll">
+            <table class="table-style" id="tasksTable">
+                <thead>
+                    <tr>
+                        <th>Tarea</th>
+                        <th style="width:150px;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var t in Model)
+                    {
+                        <tr data-id="@t.Id">
+                            <td class="desc">
+                                <span class="text">@t.Description</span>
+                                <input class="edit-input" type="text" style="display:none;" value="@t.Description" />
+                            </td>
+                            <td>
+                                <button class="btn-edit" type="button">Editar</button>
+                                <button class="btn-save" type="button" style="display:none;">Guardar</button>
+                                <button class="btn-cancel" type="button" style="display:none;">Cancelar</button>
+                                <button class="btn-complete" type="button">Completar</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="link-group">
+    <div class="link-style">
+        <a asp-controller="Club" asp-action="SeeProfile" asp-route-id="@ViewBag.clubId">Volver</a>
+    </div>
+</div>

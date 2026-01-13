@@ -1,0 +1,67 @@
+﻿@using CromePlayApp.ViewModels
+@model IEnumerable<MemberEnrollmentsListViewModel>
+
+<div class="container-style">
+
+    <h2>Usuario</h2>
+    <h3><strong>@ViewBag.MemberEmail</strong></h3>
+
+    <h2>Editar Perfil</h2>
+
+    <form class="form-style" asp-action="EditProfile" method="post">
+        <input type="hidden" name="memberId" value="@ViewBag.MemberId" />
+
+        <label>Nombre</label>
+        <input type="text" name="memberName" value="@ViewBag.MemberName" />
+
+        <label>Dirección</label>
+        <input type="text" name="memberAddress" value="@ViewBag.MemberAddress" />
+
+        <label>Teléfono</label>
+        <input type="text" name="memberPhone" value="@ViewBag.MemberPhone" />
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+
+    <h2>Datos personales</h2>
+    <ul>
+        <li>Nombre: @ViewBag.MemberName</li>
+        <li>Email: @ViewBag.MemberEmail</li>
+        <li>Dirección: @ViewBag.MemberAddress</li>
+        <li>Tlf: @ViewBag.MemberPhone</li>
+    </ul>
+
+    <h3>Eventos inscritos</h3>
+    <div class="table-scroll">
+        <table class="table-style">
+            <thead>
+                <tr>
+                    <th>Evento</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Tipo</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var ev in Model)
+                {
+                    <tr>
+                        <td>@ev.EventTitle</td>
+                        <td>@ev.EventStart?.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@ev.EventEnd?.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@ev.EventType</td>
+                        <td class="Delete">
+                            <a asp-action="DeleteEnrollment" asp-route-id="@ev.CalendarEventId" asp-route-memberId="@ev.MemberId" class="DeleteUser"><i class="bi bi-x-octagon icon-lg-action"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="link-style">
+        <a asp-action="Index">Volver</a>
+    </div>
+</div>
+

@@ -1,0 +1,71 @@
+﻿@using CromePlayApp.ViewModels
+@model IEnumerable<EventEnrollmentViewModel>
+
+<div class="container-style">
+    <h2>Unirse a un nuevo club</h2>
+    <h4>@(Model.FirstOrDefault()?.MemberName ?? "Acceso Inscripciones")</h4>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-warning">@TempData["Message"]</div>
+    }
+
+    @if (Model != null && Model.Any())
+    {
+        <table class="table-style">
+            <thead>
+                <tr>
+                    <th>Evento</th>
+                    <th>Plazas</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Tipo</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var evm in Model)
+                {
+                    <tr>
+                        <td>@evm.EventTitle</td>
+                        <td>@evm.AvailablePlace</td>
+                        <td>@evm.EventStart?.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@evm.EventEnd?.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@evm.EventType</td>
+                        <td>
+                            @if (evm.IsAlreadyEnrolled)
+                            {
+                                <span class="text-success">Ya inscrito</span>
+                            }
+                            else
+                            {
+                                <form asp-controller="Member" asp-action="NewEnrollment" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="MemberId" value="@evm.MemberId" />
+                                    <input type="hidden" name="CalendarEventId" value="@evm.CalendarEventId" />
+                                    <input type="hidden" name="GameId" value="@evm.GameId" />
+
+                                    <button type="submit" class="btn btn-primary"
+                                            @(evm.AvailablePlace.GetValueOrDefault() <= 0 ? "disabled" : "")>
+                                        Inscribirse
+                                    </button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No hay eventos disponibles.</p>
+    }
+
+    <div class="link-style">
+        <a asp-action="EditProfile" class="btn btn-secondary">Volver</a>
+    </div>
+</div>
+
+
+

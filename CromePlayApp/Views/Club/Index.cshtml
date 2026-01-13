@@ -1,0 +1,36 @@
+﻿
+    <div class="container-style">
+
+    <h1>MasterClub Perfil</h1>
+
+    <div class="view-overlay">
+        <img src="~/images/Club/FondoClub_1.jpg" />
+    </div>
+
+    <p><strong>Bienvenido/a a través de esta cuenta podrás gestionar todos los eventos relacionados con tu sección de clubes de juegos. Podrás crear, editar y eliminar los diferentes clubes que pertenecen al mismo. Además de gestionar un calendario con los eventos.</strong></p>
+
+    <div class="link-group">
+
+            @{
+                if ((ViewData["Registrado"] as bool?) ?? false)
+                {
+                    <div class="link-style">
+                    <a asp-action="SeeProfile" asp-route-id="@ViewBag.ClubId">Perfil</a>
+                    </div>
+                }
+                else
+                {
+                    <p>Su perfil no esta creado. Por favor, pongase en contacto con el administrador para que cree su club y así pueda tener acceso a su interfaz</p>
+
+                }
+            }
+
+        <div class="link-style">
+            <a asp-action="GameList">Listado</a>
+        </div>
+    </div>
+
+
+
+
+</div>

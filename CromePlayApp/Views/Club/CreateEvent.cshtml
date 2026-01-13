@@ -1,0 +1,73 @@
+﻿@using CromePlayApp.Dtos.Calendar
+@model CreateEventDto
+
+<div class="container-style">
+    <h2>Añadir un nuevo evento</h2>
+
+
+
+    @Html.ValidationSummary(excludePropertyErrors: true, "", new { @class = "text-danger" })
+
+
+
+    <form class="form-style" asp-action="CreateEvent" asp-controller="Club" method="post">
+        @Html.AntiForgeryToken()
+
+        <div>
+            <label asp-for="Title">Nombre del evento</label>
+            <input asp-for="Title" />
+            <div class="invalid-feedback" data-valmsg-for="Title"></div>
+        </div>
+
+        <div>
+            <label asp-for="AvailablePlace">Número de plazas</label>
+            <input asp-for="AvailablePlace" type="number" />
+            <div class="invalid-feedback" data-valmsg-for="AvailablePlace"></div>
+        </div>
+
+        <div>
+            <label asp-for="Start">Fecha de inicio</label>
+            <input asp-for="Start" type="datetime-local" />
+            <div class="invalid-feedback" data-valmsg-for="Start"></div>
+        </div>
+
+        <div>
+            <label asp-for="End">Fecha de finalización</label>
+            <input asp-for="End" type="datetime-local" />
+            <div class="invalid-feedback" data-valmsg-for="End"></div>
+        </div>
+
+        <div>
+            <label asp-for="Price">Precio</label>
+            <input asp-for="Price" type="number" />
+            <div class="invalid-feedback" data-valmsg-for="Price"></div>
+        </div>
+
+        <div>
+            <label asp-for="Type">Género</label>
+            <input asp-for="Type" />
+            <div class="invalid-feedback" data-valmsg-for="Type"></div>
+        </div>
+
+
+        <div>
+            <label asp-for="GameId" class="form-label">Juego</label>
+            <select asp-for="GameId" class="form-select" asp-items="ViewBag.Games">
+                <option value="">-- Selecciona un juego --</option>
+            </select>
+            <span asp-validation-for="GameId" class="text-danger"></span>
+        </div>
+
+
+
+
+       
+
+
+        <button type="submit">Crear</button>
+    </form>
+
+    <div class="link-style">
+        <a href="@Url.Action("GameList")">Volver</a>
+    </div>
+</div>

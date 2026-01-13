@@ -1,0 +1,54 @@
+﻿@using CromePlayApp.Dtos.Calendar
+@model UpdateEventDto
+
+<div class="container-style">
+    <h2>Editar un evento</h2>
+    <form class=" form-style" asp-action="EditEvent" method="post">
+
+        <input type="hidden" name="id" value="@ViewContext.RouteData.Values["id"]" />
+        <input type="hidden" asp-for="GameId" />
+
+        <div>
+            <label asp-for="Title">Nombre del evento</label>
+            <input asp-for="Title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="AvailablePlace">Número de plazas</label>
+            <input asp-for="AvailablePlace" type="number" />
+            <span asp-validation-for="AvailablePlace" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Start">Fecha de inicio</label>
+            <input asp-for="Start" type="datetime-local" />
+            <span asp-validation-for="Start" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="End">Fecha de finalización</label>
+            <input asp-for="End" type="datetime-local" />
+            <span asp-validation-for="End" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Price">Precio</label>
+            <input asp-for="Price" type="number" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="Type">Género</label>
+            <input asp-for="Type" />
+            <span asp-validation-for="Type" class="text-danger"></span>
+        </div>
+
+
+        <button type="submit">Editar</button>
+    </form>
+
+    <div class="link-style">
+        <a href="@Url.Action("GameList")">Volver</a>
+    </div>
+</div>

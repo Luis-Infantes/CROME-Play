@@ -1,0 +1,103 @@
+﻿@using CromePlayApp.ViewModels
+@model GamesListViewModel
+
+
+<div class=" container-style">
+    <h2>@Model.Club!.ClubName</h2>
+
+
+
+    @if (Model.GamesList != null && Model.GamesList.Any())
+    {
+        <div class="table-scroll">
+            <table class="table-style">
+                <thead>
+                    <tr>
+                        <th>Nombre del juego</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var game in Model.GamesList)
+                    {
+
+                        <tr data-game-id="@game.GameId">
+                            <td class="game-Details">@game.GameName</td>
+                            <td class="Edit"><a asp-action="EditGame" asp-route-id="@game.GameId"><i class="bi bi-pencil-square icon-lg-action "></i></a></td>
+                            <td class="Delete"><a asp-action="DeleteGame" asp-route-id="@game.GameId" class="DeleteUser"><i class="bi bi-x-octagon icon-lg-action"></i></a></td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+    }
+
+
+    <div class="link-group">
+        <div class="link-style">
+            <a asp-action="AddNewGame">Añadir Juego</a>
+        </div>
+    </div>
+
+
+    @if(Model.Events != null && Model.Events.Count > 0)
+    {
+        <h2>Eventos disponibles</h2>
+    
+        <div class="table-scroll">
+            <table class="table-style">
+                <thead>
+                    <tr>
+                        <th>Evento</th>
+                        <th>Plazas disponibles</th>
+                        <th>Fecha inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Precio</th>
+                        <th>Género</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var eve in Model.Events)
+                    {
+                        <tr>
+                            <td class="game-Details">
+                                <a asp-controller="club" asp-action="EventMembers" asp-route-id="@eve.Id" >@eve.Title</a>
+                            </td>
+                            <td>@eve.AvailablePlace</td>
+                            <td>@eve.Start.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@eve.End.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@eve.Price<i class="bi bi-currency-euro"></i></td>
+                            <td>@eve.Type</td>
+                            <td class="Edit"><a asp-action="EditEvent" asp-route-id="@eve.Id"><i class="bi bi-pencil-square icon-lg-action "></i></a></td>
+                            <td class="Delete"><a asp-action="DeleteEvent" asp-route-id="@eve.Id" class="DeleteUser"><i class="bi bi-x-octagon icon-lg-action"></i></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+
+
+    
+    }
+
+
+    <div class="link-group">
+        <div class="link-style">
+            <a asp-action="CreateEvent">Crear Evento</a>
+        </div>
+    </div>
+
+    <div class="link-group">
+        <div class="link-style">
+            <a href="@Url.Action("Index")">Volver</a>
+        </div>
+    </div>
+
+</div>

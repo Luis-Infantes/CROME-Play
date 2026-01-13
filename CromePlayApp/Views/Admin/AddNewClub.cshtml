@@ -1,0 +1,49 @@
+﻿@using CromePlayApp.ViewModels
+@model AddNewClubViewModel
+
+@{
+    ViewData["Title"] = "Crear club";
+}
+
+
+
+<div class="container-style">
+    <h1 class="mb-3">Crear un nuevo club</h1>
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+    <form class="form-style" asp-action="AddNewClub" method="post">
+        @Html.AntiForgeryToken()
+
+        <div>
+            <label asp-for="ClubName" class="form-label"></label>
+            <input asp-for="ClubName" class="form-control" />
+            <span asp-validation-for="ClubName" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="ClubEmail" class="form-label"></label>
+            <input asp-for="ClubEmail" class="form-control" />
+            <span asp-validation-for="ClubEmail" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="ClubDescription" class="form-label"></label>
+            <textarea asp-for="ClubDescription" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="ClubDescription" class="text-danger"></span>
+        </div>
+
+        <input asp-for="ClubId" type="hidden" />
+
+        <div class="link-style">
+                <button type="submit">Guardar</button>
+        </div>
+
+        
+    </form>
+    <div class="link-style">
+        <a href="@Url.Action("RoleTable")">Volver</a>
+    </div>
+
+</div>

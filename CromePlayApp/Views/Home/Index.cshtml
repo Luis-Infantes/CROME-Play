@@ -1,0 +1,71 @@
+﻿@using CromePlayApp.ViewModels
+@model SelectColorViewModel
+
+
+
+
+@{
+    var bgUrl = Model.CurrentBackgroundUrl; 
+}
+
+<div class="view-overlay">
+    @if (!string.IsNullOrWhiteSpace(bgUrl))
+    {
+        <img src="@bgUrl" />
+        
+    }
+    else
+    {
+
+        <img src="@Url.Content("~/images/logoapp.png")" />
+
+    }
+</div>
+
+
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="container-style">
+        <div class="form-style">
+        <h4>Selector de fondo</h4>
+        <select id="colorSelector" class="color-Selector" data-url="@Url.Action("ChangeColor", "Home")" data-current="@ViewBag.CurrentColor">
+            @foreach (var cssClass in Model.Classes)
+            {
+                <option value="@cssClass">@cssClass</option>
+            }
+        </select>
+        </div>
+    </div>
+}
+
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="container-style">
+    <form asp-action="SetHomeBackground" asp-controller="Home" class="form-style">
+
+        <h4>Selector de logo</h4>
+            <select name="fileName">
+                <option value="">-- Selecciona un fondo --</option>
+                @foreach (var f in Model.AvailableBackgrounds)
+                {
+                    <option value="@f" selected="@(f == Model.CurrentBackgroundName)">@f</option>
+                }
+            </select>
+            <button type="submit">Guardar</button>
+
+       
+    </form>
+    </div>
+
+    @if (TempData["HomeBgMsg"] is string msg && !string.IsNullOrWhiteSpace(msg))
+    {
+        <div class="alert alert-info" style="margin-top:12px;">@msg</div>
+    }
+}
+
+
+
+
+

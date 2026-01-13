@@ -1,0 +1,91 @@
+[
+  {
+    "ContainingType": "CromePlayApp.Controllers.Api.CalendarController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/calendar/events",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CromePlayApp.Controllers.Api.CalendarController",
+    "Method": "Create",
+    "RelativePath": "api/v1/calendar/events",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "CromePlayApp.Dtos.Calendar.CreateEventDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CromePlayApp.Controllers.Api.CalendarController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/calendar/events/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CromePlayApp.Controllers.Api.CalendarController",
+    "Method": "Update",
+    "RelativePath": "api/v1/calendar/events/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "CromePlayApp.Dtos.Calendar.UpdateEventDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CromePlayApp.Controllers.Api.CalendarController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/calendar/events/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CromePlayApp.Controllers.Api.CalendarController",
+    "Method": "Ping",
+    "RelativePath": "api/v1/calendar/ping",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

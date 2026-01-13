@@ -1,0 +1,114 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityRole>
+
+
+@{
+    bool allCreated = ViewBag.AllCreated is bool b && b;
+}
+
+@if (!allCreated)
+{
+    
+    <div class="container-style">
+        <form method="post" asp-action="Create" class="form-style">
+            <h2>Crear nuevo rol</h2>
+            <h4>Formulario de creación</h4>
+            <p>(MasterClub o Member)</p>
+
+            <div class="view-overlay-dos">
+                <img src="~/images/Fondo_2.jpg" alt="Fondo" />
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="roleName" class="form-control" placeholder="Nuevo Rol" required>
+            </div>
+
+            <div class="form-actions-create">
+                <button type="submit" class="btn btn-primary">Crear</button>
+            </div>
+        </form>
+    </div>
+}
+else
+{
+    <div class="alert alert-success">
+        Los roles <strong>MasterClub</strong> y <strong>Member</strong> ya están creados. Formulario bloqueado.
+    </div>
+}
+
+
+
+<div class="container-style">
+
+    <div class="form-style">
+
+        <i class="bi bi-person-bounding-box icon-lg"></i>
+        <h4>Roles disponibles</h4>
+
+        @foreach (var role in Model)
+        {
+            <ul>
+                <li><h4>@role.Name</h4></li>
+            </ul>
+        }
+    </div>
+</div>
+
+@* //Formulario para asignar un nuevo rol a una cuenta recien registrada *@
+
+<div class="container-style">
+
+    <form class="form-style" method="post" asp-action="AddUserToRole">
+        <i class="bi bi-person-rolodex icon-lg" ;></i>
+        <h4>Asigna nuevo rol</h4>
+
+        <div class="form-group">
+            <input type="email" name="userEmail" class="form-control" placeholder="Email de usuario" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" name="roleName" class="form-control" placeholder="Rol a asignar" required>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit">Asignar</button>
+        </div>
+    </form>
+
+    </div>
+
+
+
+
+    @* //Botón de acceso a la tabla de roles, de clubes, games y members *@
+
+    <div class="container-style">
+    <div class="form-style">
+        <i class="bi bi-table icon-lg"></i>
+        <h4>Tabla de clubes, juegos & miembros</h4>
+
+        <div class="link-style">
+            <a asp-action="RoleTable">Acceso</a>
+        </div>
+        </div>
+    </div>
+
+
+@* //Formulario para eliminar todas esas cuentas que se quedan perdidas tras un fallo al eliminar de manera erronea. Deconectado temporalmente *@
+@* <div class="container-style">
+    <form class="form-style" asp-controller="Admin" asp-action="CleanIdentityOrphans" method="post" id="clean-orphans-form">
+        <i class="bi bi-x-octagon icon-lg"></i>
+        <h4>Borrar cuentas perdidas</h4>
+        <p>Elimina todas esas cuentas que se hayan podido borrar y no se puedan volver a usar como registro</p>
+        @Html.AntiForgeryToken()
+        <button id="btnCleanOrphans" type="submit">Eliminar</button>
+
+    </form>
+
+</div> *@
+
+
+
+
+
+

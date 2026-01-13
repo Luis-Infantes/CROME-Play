@@ -1,0 +1,43 @@
+﻿@using CromePlayApp.ViewModels
+@model EventMembersViewModel
+
+
+<div class="container-style">
+
+    <h2>Personas inscritas al evento</h2>
+
+    <h4>@Model.Title</h4>
+
+
+    @if (Model.Members != null && Model.Members.Any())
+    {
+        <table class="table-style">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var m in Model.Members)
+                {
+
+                    <tr>
+                        <td>@m.MemberName</td>
+                        <td>@m.MemberEmail</td>
+                        <td>@m.MemberAddress</td>
+                        <td>@m.MemberPhone</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    }
+
+
+    <div class="link-style">
+        <a href="@Url.Action("GameList")">Volver</a>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿
+
+
+
+
+Correo y password de acceso a Admin:
+
+- MasterAdmin@site.com
+- AdminWarGame123!
+
+
+Correo y posible password para el registro y acceso al club de ejemplo de la base de datos
+
+- CardGames@Contact.com
+- Carg276RT!
+
+
+Ejemplos de cuentas para Clubes inventados
+
+- MiniatureGames@Contact.com
+- HJH652!fr
+
+
+- MesaGames@Contact.com
+- HJH652!fr
+
+
+
+Correo y posible password para el registro y acceso al member de ejemplo de la base de datos
+
+
+
+- SophieLeF@Contact.com
+- Psgh65!hak
+
+- AlejandroG@Contact.com
+- LOKjh87!k
+
+- JulienM@Contact.com
+- Psgh65!hak
+
+
+- DavidW@Contact.com
+- Pgsf!87Gf
+
+
+- LukasM@Contact.com
+- Plkj435!
+
+
+Ejemplos de cuentas de members inventados para crear nuevos usuarios desde cero
+
+- LukasM@Contact.com
+- TYHg4!k
+
+- PaquiM@Contact.com
+- TYHg4!k

@@ -1,0 +1,45 @@
+﻿
+
+<div class="container-style">
+
+
+    <h1>¡Bienvenido/a tu interfaz de personal!</h1>
+
+    <div class="view-overlay">
+        <img src="~/images/Member/Member-Perfil.jpg" />
+    </div>
+
+    <p>
+        <strong>
+            Nos alegra que formes parte de nuestra comunidad. Aquí comienza tu experiencia para descubrir, crear y compartir momentos únicos.
+            Explora todas las funciones que hemos preparado para ti. En primer lugar añade los datos personales que faltan y después elige a que eventos te quieres inscribir.
+            ¿Listo para empezar? ¡Tu aventura comienza ahora!
+        </strong>
+    </p>
+
+
+    <div class="link-group">
+        @{
+            if ((ViewData["Registrado"] as bool?) ?? false)
+            {
+                <div class="link-style">
+                     <a asp-action="EditProfile" asp-route-id="@ViewBag.MemberId">Acceso Perfil</a>
+                </div>
+            }
+            else
+            {
+                <p>Su perfil no esta creado. Por favor, pongase en contacto con el administrador</p>
+            }
+        }
+
+
+                <div class="link-style">
+                    <a asp-controller="Member" asp-action="NewEnrollment" asp-route-memberId="@ViewBag.MemberId">Suscripciones</a>
+                </div>
+     </div>
+
+
+
+
+
+</div>

@@ -1,0 +1,253 @@
+﻿@using CromePlayApp.ViewModels
+@using X.PagedList
+@using X.PagedList.Mvc.Core
+
+@model AdminRoleUserViewModel
+
+
+@{
+    // Definicion de variables locales
+    var sortOrder = ViewBag.sortOrder;      
+    var searchString = ViewBag.searchString;
+    var sektionName = ViewBag.CurrentSektionName;
+}
+
+
+@if(Model !=null)
+{
+    <div class="table-scroll">
+    <div class="container-style">
+        
+        <div class="section-style">
+            
+            <h2>Clubes disponibles</h2>
+
+            <table class="table-style-admin">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Usuario</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var s in Model.Clubes)
+                    {
+                        <tr>
+                            <td>@s.ClubName</td>
+                            <td>@s.ClubEmail</td>
+                            <td class="Delete"><a asp-action="DeleteClub" asp-route-id="@s.ClubId" class="DeleteUser"><i class="bi bi-x-octagon icon-lg-action"></i></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p class="info-text">Si eliminas un club. Se eliminan todos sus juegos y suscripciones</p>
+
+
+            <div class="link-style">
+                 <a asp-controller="Admin" asp-action="AddNewClub">Crear Club</a>
+            </div>
+            </div>
+       </div>
+    </div>
+}
+
+
+
+
+
+
+
+
+    
+
+
+    @if (Model != null)
+    {
+     <div class="table-scroll">
+           <div class="container-style">
+                <div class="section-style">
+                    
+                    <i class="bi bi-book icon-lg"></i>
+                    <h4>Juegos disponibles</h4>
+
+
+                    <p class="info-text">Si eliminas un juego. Se eliminan todos los miembros suscritos</p>
+
+                    <table class="table-style-admin">
+                        <thead>
+                            <tr>
+
+                                <th>Games</th>
+                                <th class="filter">
+                                    <a asp-action="RoleTable" asp-route-sortOrder="@ViewBag.Titlesort" asp-route-searchString="@ViewBag.CurrentFilter">Clubes</a>
+                                </th>
+
+                                <th class="filter">
+                                    <a asp-action="RoleTable" asp-route-sortOrder="@ViewBag.Usersort" asp-route-searchString="@ViewBag.CurrentFilter">Usuario</a>
+                                </th>
+                                <th>Eliminar</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var role in Model.Games)
+                            {
+
+                                <tr>
+                                    <td>@role.GameName</td>
+                                    <td>@role.Club!.ClubName</td>
+                                    <td>@role.Club!.ClubEmail</td>
+                                    <td class="Delete"><a asp-action="DeleteGame" asp-route-id="@role.GameId" class="DeleteUser"><i class="bi bi-x-octagon icon-lg-action"></i></a></td>
+                                </tr>
+
+                            }
+                        </tbody>
+                    </table>
+
+        
+
+
+
+
+            <!-- Paginador -->
+                @if (Model.ClubsPaged != null && Model.ClubsPaged.PageCount > 1)
+                {
+                    <div class="pagination-style"> 
+                        @Html.PagedListPager(
+                            Model.ClubsPaged,
+                            page => Url.Action("RoleTable", new { 
+                                page, 
+                                sortOrder = sortOrder, 
+                                searchString = searchString 
+                            }),
+                            new PagedListRenderOptions
+                            {
+                                // Clases de Bootstrap
+                                LiElementClasses = new[] { "page-item" },
+                                PageClasses = new[] { "page-link" },
+                                UlElementClasses = new[] { "pagination" },
+
+                                // Opciones visuales
+                                DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+                                DisplayLinkToNextPage = PagedListDisplayMode.Always,
+                                DisplayLinkToFirstPage = PagedListDisplayMode.Never,
+                                DisplayLinkToLastPage = PagedListDisplayMode.Never,
+                                MaximumPageNumbersToDisplay = 5,
+
+                                // Texto de los botones
+                                LinkToPreviousPageFormat = "<<",
+                                LinkToNextPageFormat = ">>",
+
+
+                            }
+                        )
+                    </div>
+    
+                    }
+
+    
+              </div>
+        </div>
+     </div>
+
+
+
+
+        <div class="table-scroll">
+    <div class="container-style">
+        <div class="section-style">
+            
+            <i class="bi bi-person-fill-check icon-lg"></i>
+            <h4>Usuarios Miembro</h4>
+
+            <p class="info-text">Si eliminas un usuario miembro. Se eliminan todas sus suscripciones</p>
+
+            <table class="table-style-admin">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th class="filter">
+                            <a asp-action="RoleTable" asp-route-sortOrder="@ViewBag.Membersort" asp-route-searchString="@ViewBag.CurrentFilter">Miembro</a>
+                        </th>
+                        <th>Eliminar</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var role in Model.Members)
+                    {
+
+                        <tr>
+                            <td>@role.MemberName</td>
+                            <td>@role.MemberEmail</td>
+                            <td class="Delete"><a asp-action="DeleteMember" asp-route-id="@role.MemberId" class="DeleteUser"><i class="bi bi-x-octagon icon-lg-action"></i></a></td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+            </div>
+            </div>
+        </div>
+
+    }
+
+
+    <div class="table-scroll">
+ <div class="container-style">
+
+        <div class="section-style">
+            
+            <i class="bi bi-person-fill-slash icon-lg"></i>
+            <h4>Usuarios sin rol</h4>
+        <table class="table-style-admin">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(Model!.PendingUsers != null && Model.PendingUsers.Any()) {
+
+                        foreach (var u in Model.PendingUsers)
+                        {
+                            <tr>
+                                <td>@u.PendingUserEmail</td>
+                            <td class="Delete"><a asp-action="DeletePendingUser" asp-route-id="@u.PendingUserId" class="DeleteUser"><i class="bi bi-x-octagon icon-lg-action"></i></a></td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+
+            </table>
+        </div>
+        </div>
+    </div>
+   
+
+    <div class="container-style">
+
+        <div class="link-style">
+            <a asp-controller="Admin" asp-action="Index">Volver</a>
+        </div>
+
+
+        <form id="__af" method="post" style="display:none">
+            @Html.AntiForgeryToken()
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Proyectos\\Mis cosas\\05 Estudios\\01 Microsoft 365\\00 Tajamar\\CROMEPLAY\\CromePlayApp15\\CromePlayApp\\CromePlayApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{72793300-8907-406B-9D20-6FB95EB45691}|CromePlayApp\\CromePlayApp.csproj|e:\\proyectos\\mis cosas\\05 estudios\\01 microsoft 365\\00 tajamar\\cromeplay\\cromeplayapp15\\cromeplayapp\\cromeplayapp\\cromeplayapp\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{72793300-8907-406B-9D20-6FB95EB45691}|CromePlayApp\\CromePlayApp.csproj|solutionrelative:cromeplayapp\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72793300-8907-406B-9D20-6FB95EB45691}|CromePlayApp\\CromePlayApp.csproj|e:\\proyectos\\mis cosas\\05 estudios\\01 microsoft 365\\00 tajamar\\cromeplay\\cromeplayapp15\\cromeplayapp\\cromeplayapp\\cromeplayapp\\access.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{72793300-8907-406B-9D20-6FB95EB45691}|CromePlayApp\\CromePlayApp.csproj|solutionrelative:cromeplayapp\\access.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 239,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.txt",
+              "DocumentMoniker": "E:\\Proyectos\\Mis cosas\\05 Estudios\\01 Microsoft 365\\00 Tajamar\\CROMEPLAY\\CromePlayApp15\\CromePlayApp\\CromePlayApp\\CromePlayApp\\README.txt",
+              "RelativeDocumentMoniker": "CromePlayApp\\README.txt",
+              "ToolTip": "E:\\Proyectos\\Mis cosas\\05 Estudios\\01 Microsoft 365\\00 Tajamar\\CROMEPLAY\\CromePlayApp15\\CromePlayApp\\CromePlayApp\\CromePlayApp\\README.txt",
+              "RelativeToolTip": "CromePlayApp\\README.txt",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAFYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-01-10T16:10:30.723Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:14:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:618693198:0:{13143d73-808b-4a2f-bebb-ccbe9c93fe37}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ACCESS.txt",
+              "DocumentMoniker": "E:\\Proyectos\\Mis cosas\\05 Estudios\\01 Microsoft 365\\00 Tajamar\\CROMEPLAY\\CromePlayApp15\\CromePlayApp\\CromePlayApp\\CromePlayApp\\ACCESS.txt",
+              "RelativeDocumentMoniker": "CromePlayApp\\ACCESS.txt",
+              "ToolTip": "E:\\Proyectos\\Mis cosas\\05 Estudios\\01 Microsoft 365\\00 Tajamar\\CROMEPLAY\\CromePlayApp15\\CromePlayApp\\CromePlayApp\\CromePlayApp\\ACCESS.txt",
+              "RelativeToolTip": "CromePlayApp\\ACCESS.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-01-10T17:58:48.408Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

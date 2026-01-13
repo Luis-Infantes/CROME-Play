@@ -1,0 +1,31 @@
+﻿@using CromePlayApp.Models
+@model Club
+
+
+
+<div class="container-style">
+
+        <h2>@Model.ClubName</h2>
+         <h3>@Model.ClubEmail</h3>
+
+    <p>@Model.ClubDescription</p>
+
+
+    <div class="link-group">
+       <div class="link-style">
+            <a asp-action="EditProfile" asp-route-id="@Model.ClubId">Editar perfil</a>
+        </div>
+
+        <div class="link-style">
+            <a asp-controller="Club" asp-action="Tasks" asp-route-id="@Model.ClubId">Gestor de tareas</a>
+        </div>
+     </div>
+
+     <div class="link-group">
+        <div class="link-style">
+            <a asp-action="Index" asp-route-id="@Model.ClubId">Volver</a>
+        </div>
+     </div>
+   
+</div>
+

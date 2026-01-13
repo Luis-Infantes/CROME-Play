@@ -1,0 +1,698 @@
+
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    margin: 0; 
+}
+
+
+/*BACKGROUND COLORS SELECTION*/
+
+/* Fondo general por tema */
+body.white { background: linear-gradient(to right, #ffffff, #bdc3c7); color: #000000;}
+body.blue  { background: linear-gradient(to right, #61a1d1, #17172e); color: #17172e;}
+body.green { background: linear-gradient(to right, #3a2646, #327535); color: #f57c09;}
+body.yellow{ background: linear-gradient(to right, #17172e, #714011); color: #efec49;}
+body.gray  { background: linear-gradient(to right, #bdc3c7, #2c3e50); color: #2c3e50;}
+
+
+body.white .app-navbar { background: linear-gradient(to right, #ffffff, #bdc3c7);}
+body.blue  .app-navbar { background: linear-gradient(to right, #61a1d1, #17172e);}  
+body.green .app-navbar { background: linear-gradient(to right, #000000, #327535);}
+body.yellow.app-navbar { background: linear-gradient(to right, #f7971e, #efec49);}
+body.gray  .app-navbar { background: linear-gradient(to right, #bdc3c7, #2c3e50);}
+
+
+body.white .app-navbar .nav-link { color: #000000;}
+body.blue  .app-navbar .nav-link { color: #17172e;}
+body.green .app-navbar .nav-link { color: #f57c09;}
+body.yellow.app-navbar .nav-link { color: #efec49;}
+body.gray  .app-navbar .nav-link { color: #2c3e50;}
+
+
+body.white  .form-style { border: 1px solid #000000;}
+body.blue   .form-style { border: 1px solid #17172e;}
+body.green  .form-style { border: 1px solid #f57c09;}
+body.yellow .form-style { border: 1px solid #efec49;}
+body.gray   .form-style { border: 1px solid #ffffff;}
+
+body.white  .form-style button {background:#bdc3c7; color: #000000; border: 1px solid #000000;}
+body.blue   .form-style button {background:#61a1d1; color: #17172e; border: 1px solid #17172e;}
+body.green  .form-style button {background:#000000; color: #f57c09; border: 1px solid #f57c09;}
+body.yellow .form-style button {background:#f7971e; color: #efec49; border: 1px solid #efec49;}
+body.gray   .form-style button {background:#bdc3c7; color: #2c3e50; border: 1px solid #ffffff;}
+
+
+body.white  .form-style button:hover {color:#bdc3c7; background: #000000;}
+body.blue   .form-style button:hover {color:#61a1d1; background: #17172e;}
+body.green  .form-style button:hover {color:#000000; background: #f57c09;}
+body.yellow .form-style button:hover {color:#f7971e; background: #efec49;}
+body.gray   .form-style button:hover {color:#bdc3c7; background: #2c3e50;}
+
+
+body.white  .table-style th,td {background:#c5d0dc; color: #000000; border: 1px solid #000000;}
+body.blue   .table-style th,td {background:#c5d0dc; color: #17172e; border: 1px solid #17172e;}
+body.green  .table-style th,td {background:#c5d0dc; color: #f57c09; border: 1px solid #f57c09;}
+body.yellow .table-style th,td {background:#c5d0dc; color: #efec49; border: 1px solid #efec49;}
+body.gray   .table-style th,td {background:#c5d0dc; color: #2c3e50; border: 1px solid #ffffff;}
+
+
+
+body.white  .link-style  a {background:#bdc3c7;color: #000000; text-decoration:none}
+body.blue   .link-style  a {background:#61a1d1;color: #17172e; text-decoration:none}
+body.green  .link-style  a {background:#000000;color: #f57c09; text-decoration:none}
+body.yellow .link-style  a {background:#f7971e;color: #efec49; text-decoration:none}
+body.gray   .link-style  a {background:#bdc3c7;color: #2c3e50; text-decoration:none}
+
+body.white  .link-style   a:hover {color:#bdc3c7; background: #000000;}
+body.blue   .link-style   a:hover {color:#61a1d1; background: #17172e;}
+body.green  .link-style   a:hover {color:#000000; background: #f57c09;}
+body.yellow .link-style   a:hover {color:#f7971e; background: #efec49;}
+body.gray   .link-style   a:hover {color:#bdc3c7; background: #2c3e50;}
+
+
+
+/*----------PAGINADOR----------*/
+
+    body.white .container-style .pagination .page-link {
+        color: #000000; /* Color del texto azul */
+        background-color: #bdc3c7; /* Fondo blanco */
+        border: 1px solid #dee2e6; /* Borde gris */
+        margin: 0 2px; /* Un poco de espacio entre botones */
+    }
+
+    body.white .container-style .pagination .page-item.active .page-link {
+        background-color: #17172e; /* El botón activo es azul */
+        color: white; /* Texto blanco en el botón activo */
+    }
+
+
+
+    body.blue .container-style .pagination .page-link {
+        color: #17172e; /* Color del texto azul */
+        background: #61a1d1; /* Fondo blanco */
+        border: 1px solid #dee2e6; /* Borde gris */
+        margin: 0 2px; /* Un poco de espacio entre botones */
+    }
+
+    body.blue .container-style .pagination .page-item.active .page-link {
+        background-color: rgb(18, 95, 116); /* El botón activo es azul */
+        color: white; /* Texto blanco en el botón activo */
+    }
+
+
+    body.green .container-style .pagination .page-link {
+        color: #f57c09; /* Color del texto azul */
+        background: #000000; /* Fondo blanco */
+        border: 1px solid #f57c09; /* Borde gris */
+        margin: 0 2px; /* Un poco de espacio entre botones */
+    }
+
+    body.green .container-style .pagination .page-item.active .page-link {
+        background-color: #f57c09; /* El botón activo es azul */
+        color: black; /* Texto blanco en el botón activo */
+    }
+
+
+
+    body.yellow .container-style .pagination .page-link {
+        color: #efec49; /* Color del texto azul */
+        background: #37290e; /* Fondo blanco */
+        border: 1px solid #f57c09; /* Borde gris */
+        margin: 0 2px; /* Un poco de espacio entre botones */
+    }
+
+    body.yellow .container-style .pagination .page-item.active .page-link {
+        background-color: #f1740b; /* El botón activo es azul */
+        color: black; /* Texto blanco en el botón activo */
+    }
+
+
+
+
+
+
+
+    body.gray .container-style .pagination .page-link {
+        color: #2c3e50; /* Color del texto azul */
+        background-color: #bdc3c7; /* Fondo blanco */
+        border: 1px solid #dee2e6; /* Borde gris */
+        margin: 0 2px; /* Un poco de espacio entre botones */
+    }
+
+    body.gray  .container-style .pagination .page-item.active .page-link {
+        background-color: #2c3e50; /* El botón activo es azul */
+        color: white; /* Texto blanco en el botón activo */
+    }
+
+
+/*-------------------------------------------------------*/
+
+
+/*------------------MENU-------------------------*/
+
+
+    body.white .link-style-li a {
+        color: #000000;
+        text-decoration: none;
+        padding: 9px 20px;
+        margin: 0 5px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 1px solid #000000;
+    }
+
+        body.white .link-style-li a:hover {
+            color: #bdc3c7;
+            background-color: #000000;
+        }
+
+
+    body.white .link-style-li button {
+        color: #000000;
+        background-color: #bdc3c7;
+        text-decoration: none;
+        padding: 9px 20px;
+        margin: 0 5px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 1px solid #000000;
+    }
+
+        body.white .link-style-li button:hover {
+            color: #bdc3c7;
+            background-color: #000000;
+        }
+
+
+
+
+    body.blue .link-style-li a {
+        color: #17172e;
+        background-color: #61a1d1;
+        text-decoration: none;
+        padding: 9px 20px;
+        margin: 0 5px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 1px solid #17172e;
+    }
+
+        body.blue .link-style-li a:hover {
+            color: #bdc3c7;
+            background-color: #17172e;
+        }
+
+
+    body.blue .link-style-li button {
+        color: #17172e;
+        background-color: #61a1d1;
+        text-decoration: none;
+        padding: 9px 20px;
+        margin: 0 5px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 1px solid #17172e;
+    }
+
+        body.blue .link-style-li button:hover {
+            color: #bdc3c7;
+            background-color: #17172e;
+        }
+
+
+
+
+    body.green .link-style-li a {
+        color: #f57c09;
+        text-decoration: none;
+        padding: 9px 20px;
+        margin: 0 5px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 1px solid #f57c09;
+    }
+
+    body.green .link-style-li a:hover {
+        color: #327535;
+        background-color: #f57c09;
+    }
+
+
+    body.green .link-style-li button {
+        color: #f57c09;
+        background-color: #327535;
+        text-decoration: none;
+        padding: 9px 20px;
+        margin: 0 5px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 1px solid #f57c09;
+    }
+
+        body.green .link-style-li button:hover {
+            color: #327535;
+            background-color: #f57c09;
+        }
+
+
+
+    body.yellow .link-style-li a {
+        color: #efec49;
+        text-decoration: none;
+        padding: 9px 20px;
+        margin: 0 5px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 1px solid #efec49;
+    }
+
+        body.yellow .link-style-li a:hover {
+            color: #7e450f;
+            background-color: #efec49;
+        }
+
+
+    body.yellow .link-style-li button {
+        color: #efec49;
+        background-color: #7e450f;
+        text-decoration: none;
+        padding: 9px 20px;
+        margin: 0 5px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 1px solid #efec49;
+    }
+
+        body.yellow .link-style-li button:hover {
+            color: #7e450f;
+            background-color: #efec49;
+        }
+
+
+
+
+
+    body.gray .link-style-li a {
+        color: #2c3e50;
+        background-color: #bdc3c7;
+        text-decoration: none;
+        padding: 9px 20px;
+        margin: 0 5px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 1px solid #2c3e50;
+    }
+
+        body.gray .link-style-li a:hover {
+            color: #bdc3c7;
+            background-color: #4f6e8e;
+        }
+
+
+    body.gray .link-style-li button {
+        color: #2c3e50;
+        background-color: #bdc3c7;
+        text-decoration: none;
+        padding: 9px 20px;
+        margin: 0 5px;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        border: 1px solid #2c3e50;
+    }
+
+        body.gray .link-style-li button:hover {
+            color: #bdc3c7;
+            background-color: #4f6e8e;
+        }
+
+
+
+.info-text {
+    color: #bdc3c7;
+}
+/* Hover sutil */
+.app-navbar .nav-link:hover {
+    text-decoration: underline;
+}
+
+/*-------ICONOS------*/
+
+
+
+
+.icon-lg {
+    font-size: 3rem;
+    
+}
+
+
+.icon-lg-action {
+
+    font-size: 1.5rem;
+}
+/*----------IMAGENES---------*/
+.view-overlay img {
+    display: grid;
+    margin: 0 auto;
+    width: 100%;
+    opacity: 0.7;
+}
+
+
+.view-overlay-dos img {
+    display: grid;
+    margin: 0 auto;
+    width: 60%;
+    opacity: 0.7;
+}
+
+
+
+/*----------------------------*/
+
+    /* Contenedor principal */
+    .container-style {
+        display: grid;
+        gap: 20px;
+        width: 80%;
+        margin: 20px auto;
+        text-align: center;
+       
+    }
+
+        .container-style ul {
+            list-style-type: none;
+            text-align: center;
+            font-weight: bold;
+            padding-left: 0;
+        }
+
+    @media (max-width: 600px) {
+        .container-style {
+            grid-template-columns: 1fr; /* Una columna para móviles */
+        }
+    }
+
+
+.section-style {
+    display: grid;
+    border: solid 1px white;
+    margin: 20px auto;
+    gap: 15px;
+    padding: 20px;
+}
+
+
+
+/* Formularios */
+.form-style {
+    display: grid;
+    width: 600px;
+    margin: 20px auto;
+    gap: 15px;
+    padding: 20px;
+}
+
+    /* entradas de texto */
+    .form-style input, textarea {
+        padding: 8px;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+        .form-style input:focus {
+            outline: none;
+            border-color: #ffffff;
+            box-shadow: 0 0 5px #ffffff;
+        }
+
+    .form-style select {
+        border-radius: 8px;
+        padding: 8px;
+    }
+
+    .form-style button {
+        padding: 8px 16px;
+        max-width: 280px;
+        margin: auto;
+        font-size: 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+@media (max-width: 600px) {
+    .form-style {
+        max-width: 300px
+    }
+}
+
+
+
+
+/*--------- LINKS----------- */
+.link-style a {
+    padding: 9px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid white;
+}
+
+
+.link-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+
+.controller-style {
+    display: grid;
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+
+/*-----BOTONES EDIT, DELETE, DETAILS---------*/
+
+    .Delete a
+    {
+        text-decoration:none;
+        font-weight:bold;
+        color: darkred
+    }
+
+    .Delete a:hover
+    {
+
+        color:red;
+    }
+
+
+
+.Edit a {
+    text-decoration: none;
+    font-weight: bold;
+    color: green;
+}
+
+    .Edit a:hover {
+        color: greenyellow;
+    }
+
+
+.game-Details a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #131314;
+}
+
+    .game-Details a:hover {
+        color: #0c9ff5;
+    }
+
+
+
+/*----------FILTRO---------------*/
+.filter a {
+    text-decoration: none;
+    font-weight: bold;
+    color: darkblue
+}
+
+    .filter a:hover {
+        color: blue;
+    }
+
+
+/*--------ESTILOS DE TABLA------------------*/
+
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* scroll suave para pantallas pequeñas */
+}
+
+
+
+.table-style {
+    margin: 20px auto;
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 600px;
+    background-color: antiquewhite;
+ 
+}
+
+.table-style th, td {
+     padding: 8px;
+     word-wrap: break-word; 
+     white-space: nowrap; 
+     text-overflow: ellipsis;
+     overflow: hidden; 
+     border-bottom: 1px solid #e5e7eb;
+       
+}
+
+/* Responsive: en pantallas pequeñas, convierte la tabla en bloques */
+
+@media (max-width: 768px) {
+    .table-style th,
+    .table-style td {
+        padding: 6px;
+        font-size: 0.95rem;
+    }
+}
+
+
+.table-style button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #2c3e50;
+    color:#bdc3c7;
+    font-weight:bold;
+}
+
+    .table-style button:hover {
+        color: #2c3e50;
+        background-color: #527393;
+    }
+
+
+/*----------table-style-admin--------------------*/
+
+.table-style-admin {
+    margin: 20px auto;
+    text-align: center;
+    border-collapse: collapse;
+    width: 10%;
+    min-width: 600px;
+    background-color: aliceblue;
+    
+}
+
+    .table-style-admin th, td {
+        padding: 8px;
+        word-wrap: break-word; 
+        white-space: nowrap; 
+        text-overflow: ellipsis; 
+        overflow: hidden; 
+        border-bottom: 1px solid #e5e7eb;
+        
+    }
+
+
+/* Responsive: en pantallas pequeñas, convierte la tabla en bloques */
+
+@media (max-width: 768px) {
+    .table-style-admin th,
+    .table-style-admin td {
+        padding: 6px;
+        font-size: 0.95rem;
+    }
+}
+
+
+.table-style-admin button {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #2c3e50;
+    color: #bdc3c7;
+    font-weight: bold;
+}
+
+    .table-style-admin button:hover {
+        color: #2c3e50;
+        background-color: #527393;
+    }
+
+
+
+
+/*Estilos para el paginador del Admin*/
+
+.pagination-style {
+    margin: 20px auto;
+    text-align: center;
+    
+
+}
+
+
+
+    /*Selector Background-color*/
+    .color-Selector {
+        background-color: whitesmoke;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+
+
+
+    /* Footer siempre abajo, visible y clicable */
+    .site-footer {
+        position: relative; 
+        z-index: 100; 
+        text-align: center;
+        color: #fff;
+        padding: 12px 16px;
+        border-top: 1px solid rgba(255,255,255,.15);
+    }

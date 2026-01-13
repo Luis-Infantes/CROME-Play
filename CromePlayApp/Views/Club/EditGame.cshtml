@@ -1,0 +1,33 @@
+﻿@using CromePlayApp.ViewModels
+@model EditGameViewModel
+
+<div class="table-scroll">
+    <div class="container-style">
+
+            <h2>Editar club</h2>
+            <form class=" form-style" asp-action="EditGame" method="post">
+
+                <input type="hidden" asp-for="GameId" />
+
+                <div>
+                    <label asp-for="GameName">Nombre</label>
+                    <input asp-for="GameName" />
+                    <span asp-validation-for="GameName" class="text-danger"></span>
+                </div>
+
+                <div>
+                    <label asp-for="GameDescription">Descripción</label>
+                    <textarea asp-for="GameDescription"></textarea>
+                    <span asp-validation-for="GameDescription" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit">Guardar</button>
+            </form>
+
+            <div class="link-style">
+                <a href="@Url.Action("GameList")">Volver</a>
+            </div>
+
+    </div>
+</div>

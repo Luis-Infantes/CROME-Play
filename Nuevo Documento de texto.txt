@@ -1,0 +1,84 @@
+Roles: Admin, User, MasterClub, Member
+
+Club:
+
+Clubid
+Clubname: Juegos de cartas
+Clubemail: Cardgamescontact.com
+ClubDescription: --------------
+
+
+Game:
+
+id 
+name: Marvel
+descripción: …….
+sektionid
+
+CalendarEvent:
+
+id
+titulo: similar al nombre del club
+descripción: similar a la del club
+fecha inicio:
+fecha fin:
+type: genero
+createdat: lo mismo. Fecha de creación
+updated: null
+OwnerUserId: MasterSektion
+Gameid
+
+
+Enrollment:
+
+id
+gameid
+memberid
+
+
+Member:
+---
+
+ICONOS:
+
+
+ELIMINAR
+
+<i class="bi bi-x-octagon"></i>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+﻿@using CromePlayApp.ViewModels
+@model AddNewGameViewModel
+
+<div class="container-style">
+    <h2>Añadir un nuevo juego</h2>
+    <form class=" form-style" asp-action="AddNewGame" method="post" id="AddNewCl">
+
+            <input type="hidden" asp-for="ClubId" />
+            <input type="hidden" asp-for="ClubEmail" />
+
+        <div>
+            <label asp-for="GameName">Nombre</label>
+            <input asp-for="GameName" />
+            <div class="invalid-feedback" data-valmsg-for="GameName"></div>
+        </div>
+
+        <div>
+            <label asp-for="GameDescription">Descripción</label>
+            <textarea asp-for="GameDescription"></textarea>
+            <div class="invalid-feedback" data-valmsg-for="GameDescription"></div>
+        </div>
+
+
+        <button type="submit">Crear</button>
+    </form>
+
+        <div class="link-style">
+            <a href="@Url.Action("GameList")">Volver</a>
+        </div>
+</div>
+
